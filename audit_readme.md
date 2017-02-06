@@ -1,4 +1,4 @@
-# Enhanced Dictionary Audit Testbed
+# Dictionary Audit Testbed
 **Author:** <a href=mailto:ditdahdash@gmail.com>Me</a>  
 **Last Code Update:** 20161012  
 **Current Version:** v1.0
