@@ -1,0 +1,95 @@
+<head><title>Dictionary Audit</title></head>
+
+<!-- for FF, Chrome, Opera-->
+<link rel="icon" type="image/png" href="//ditdahdash.me/morse_icon_16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="//ditdahdash.me/morse_icon_32.png" sizes="32x32">
+
+<a href="//ditdahdash.me">
+<!-- <img src="morse_logo.png" alt="Home Button" title="Return to Projects" width=40 height=40> -->
+<img src="//ditdahdash.me/morse_logo.png" alt="Home Button" title="Return to Projects">
+</a>
+
+<h1>Dictionary Audit Testbed</h1>
+
+<p><strong>Author:</strong> <a href=mailto:ditdahdash@gmail.com>ditdahdash</a> <br />
+<strong>Last Code Update:</strong> 20161012 <br />
+<strong>Version:</strong> v1.0</p>
+
+<hr />
+
+<h2>Project Description</h2>
+
+<p>This is a testbed for code that will eventually be ported to Sandbox to do an automated audit of the database table. This code uses the text file variables.sample as the example file to format into &lt;variable_list> for comparison with the Data Dictionary.</p>
+
+<hr />
+
+<h2>To-Do's</h2>
+
+<p>Please reference the flow chart below the To-Do table for a description of each "audit_flow step #."</p>
+
+<p>
+<table border style="border-collapse:collapse">
+
+<tr>
+<th>audit_flow step #</th>	<th>Issue(s)</th>	<th>TO DO now</th>	<th>TO DO later</th>
+</tr>
+
+<tr>
+<td>3(a)</td>	<td>Special character '\t' not recognized by code.</td>	<td>COMPLETED code workaround: split on a different special character.</td>	<td>This step is currently done in Sublime, which could be introducing the special character issue. Code this step in Python, which will also help with automation, and re-test for special character recognition.</td>
+</tr>
+
+<tr>
+<td>3(b)</td>	<td>&lt;variable_list> is not in desired format for comparison.</td>	<td>WRITE code to get rid of indices, strip extra white space, git rid of extra brackets, and replace colons between values with commas.</td>	<td></td>
+</tr>
+
+<tr>
+<td>5(a)</td>	<td>Conversion from Data Dictionary Excel file to dictionary list is not completely automated.</td>	<td>OBTAIN standardized, non-pdf format of Data Dictionary. COMPLETED copy &amp; paste relevant Data Dictionary fields into more manipulable Excel file.</td>	<td>Automate conversion process to sync with format of standardized Data Dictionary, once received.</td>
+</tr>
+
+<tr>
+<td>5(b)</td>	<td>Data Dictionary value definitions are not standardized; some have quotes, some do not, etc.</td>	<td>REQUEST vendor separate values and descriptions, as modeled in previously identified example, as part of its Data Dictionary standardization process.</td>	<td>WRITE code to identify values by looking in description field within single and double quotes and after "=".</td>
+</tr>
+
+<tr>
+<td>5(c)</td>	<td>Code needs to check Data Dictionary for truncated value definitions.</td>	<td>SKIM manually for truncated value definitions and CHECK output of step 8 manually for value mismatches. CROSS-REFERENCE detected discrepancies with old Data Dictionary.</td>	<td>WRITE code to flag if there is not a "." as end-of-line character in description field. Make sure this code syncs with format of standardized Data Dictionary, once received.</td>
+</tr>
+
+<tr>
+<td>5(d)</td>	<td>Many of the Data Dictionary completed description fields do not terminate with "."</td>	<td>REQUEST vendor use "." as end-of-line character for all description fields as part of its Data Dictionary standardization process.</td>	<td></td>
+</tr>
+
+<tr>
+<td>7(a)</td>	<td>Code needs to check whether all values in &lt;variable_list> are in &lt;dictionary_list>.</td>	<td>WRITE code to use values in &lt;variable_list> as regular expressions to search on in &lt;dictionary_list>.</td>	<td></td>
+</tr>
+
+<tr>
+<td>7(b)</td>	<td>Code needs to check whether all values in &lt;dictionary_list> are in &lt;variable_list>.</td>	<td>CHECK output of step 8 manually for values in &lt;dictionary_list> that are not in &lt;variable_list> (and vice-versa).</td>	<td>Use method indicated in Issue 5(b) for code to generate a value list for &lt;dictionary_list>; once generated, code can compare directly with value list of &lt;variable_list> for discrepancies.</td>
+</tr>
+
+<tr>
+<td>8</td>	<td>Output comparison file needs to be generated.</td>	<td>USE openpyxl library to write final results of (mis)matches to Excel file.</td>	<td></td>
+</tr>
+
+</table>
+</p>
+
+<hr />
+
+<h2>Instructions</h2>
+
+<p>Please reference flow chart below.</p>
+<p>
+<img src="flow.png" alt="FlowChart" title="Flow Chart">
+</p>
+
+<hr />
+
+<h2>Tests</h2>
+
+<p>A list of test scripts will be added as they are created.</p>
+
+<hr />
+
+<a href="//ditdahdash.me">
+<img src="//ditdahdash.me/morse_logo.png" alt="Home Button" title="Return to Projects">
+</a>
